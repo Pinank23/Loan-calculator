@@ -1,0 +1,53 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loan calculator</title>
+    <link rel="stylesheet" href="loan.css">
+  </head>
+  <body>
+  <label>Loan Start Date:</label>
+  <input type="date" id="startDate"><br><br>
+
+  <label>Loan Amount:</label>
+  <input type="number" id="amount"><br><br>
+
+  <label>Rate of Interest:</label>
+  <input type="number" id="interestRate"><br><br>
+
+  <label>Loan Days:</label>
+  <input type="number" id="days"><br><br>
+
+  <button id="calculateButton" onclick="calculate()">Calculate</button><br><br>
+  <div id="answer">
+  <h2>Answer:</h2>
+  <p>Interest: <span id="interest"></span></p>
+  <p>Total Amount: <span id="totalAmount"></span></p>
+  <p>Date To Complete Loan: <span id="completionDate"></span></p>
+</div>
+    <script>
+      function calculate(){
+      let startDate = new Date(document.getElementById('startDate').value);
+      let amount = Number(document.getElementById('amount').value);
+      let interestRate = Number(document.getElementById('interestRate').value / 100);
+      let days = Number(document.getElementById('days').value);
+
+      let interest = (amount * interestRate * days) / 30;
+      let totalAmount = amount + interest;
+
+      let completionDate = new Date(startDate.getTime() + days * 24 * 60 * 60 * 1000);
+      // startdate ma days hour minutes second milisecond
+
+      document.getElementById('interest').innerHTML = interest.toFixed(0);
+      document.getElementById('totalAmount').innerHTML = totalAmount.toFixed(0);
+      let year = completionDate.getFullYear();
+      let month = completionDate.getMonth() + 1; //  1 thi 12 month mate
+      let day = completionDate.getDate();
+      document.getElementById('completionDate').innerHTML = `${day}-${month}-${year}`;
+
+      document.getElementById('answer').style.display = 'block';
+  }
+    </script>
+  </body>
+  </html>

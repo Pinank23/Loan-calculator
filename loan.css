@@ -1,0 +1,66 @@
+ /* Add some basic styling to make it look decent */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  #answer {
+    display: none;
+  }
+  
+  /* Make the form responsive */
+  .form-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    overflow:hidden ;
+    background-color: #f9f9f9;
+    border: 10px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 1px;
+  }
+  
+  input[type="date"], input[type="number"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+  }
+  
+  button[type="button"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Make the output section responsive */
+  .output-container {
+    margin-top: 20px;
+  }
+  
+  .output-container p {
+    margin-bottom: 10px;
+  }
+  
+  /* Add some media queries for responsiveness */
+  @media (max-width: 600px) {
+    .form-container {
+      margin: 20px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .form-container {
+      margin: 10px;
+    }
+  }
